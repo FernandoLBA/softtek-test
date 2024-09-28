@@ -1,7 +1,5 @@
 node_modules
 dist
-src
 
 package-lock.json
 .DS_Store
-vite-env.d.ts
