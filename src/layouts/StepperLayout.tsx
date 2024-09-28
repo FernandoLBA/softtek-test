@@ -10,10 +10,10 @@ interface Props {
 
 export function StepperLayout({ children }: Props) {
   return (
-    <div className="h-fit w-screen flex flex-col">
+    <div className="h-fit w-screen min-w-[380px] flex flex-col">
       <Stepper path={window.location.pathname} />
 
-      <div className="px-8 md:px-48 border">
+      <div className="px-8 md:px-48">
         <BackChevronIcon />
 
         <div className="flex flex-col items-center justify-center py-14">

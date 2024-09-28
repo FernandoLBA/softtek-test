@@ -1,10 +1,14 @@
 import { StepperLayout } from "../../../layouts";
-import { TopText } from "../components";
+import { TopLayout } from "../layouts/TopLayout";
 
 export function PlansView() {
+  // Todo: debo manejar la data con un context desde aquí
+
   return (
     <StepperLayout>
-      <TopText />
+      <TopLayout />
+
+      {/* // Todo: acá debo insertar los planes */}
     </StepperLayout>
   );
 }

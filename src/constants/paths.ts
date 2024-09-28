@@ -1,5 +1,7 @@
 export const appPaths = Object.freeze({
   HOME: "/",
   PLANS: "/planes",
-  RESUME: "/resumen"
+  FOR_ME: "/para-mi",
+  FOR_SOMEONE: "/para-alguien-mas",
+  RESUME: "/resumen",
 });
