@@ -1,16 +1,6 @@
 node_modules
 dist
-src/components
-src/config
-src/constants
-src/features
-src/hooks
-src/icons
-src/interfaces
-src/layouts
-src/routes
-src/utils
-src/views
+src
 
 package-lock.json
 .DS_Store
