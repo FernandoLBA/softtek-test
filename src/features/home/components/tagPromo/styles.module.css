@@ -1,0 +1,7 @@
+.tag-promo{
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  background: linear-gradient(35deg, #00F4E2, #00FF7F);
+  border-radius: 4px;
+}
