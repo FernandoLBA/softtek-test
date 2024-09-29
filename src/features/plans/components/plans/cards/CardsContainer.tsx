@@ -1,18 +1,12 @@
-import { useFormik } from "formik";
-import { forMe, forSomebody } from "../../imgs";
-import { ICardsData } from "../../interfaces";
+import { useContext } from "react";
+
 import { Card } from "./Card";
+import { ICardsData, IPlansContext } from "../../../interfaces";
+import { PlansContext } from "../../../contexts";
+import { forMe, forSomebody } from "../../../imgs";
 
 export function CardsContainer() {
-  const { values, setFieldValue, handleSubmit } = useFormik({
-    initialValues: {
-      forMe: false,
-      forSomebody: false,
-    },
-    onSubmit: (values) => {
-      console.log("🚀 ~ CardsContainer ~ submitting:", values);
-    },
-  });
+  const { values, setFieldValue, handleSubmit } = useContext<IPlansContext>(PlansContext);
 
   return (
     <div className="flex justify-center items-center flex-wrap gap-8">

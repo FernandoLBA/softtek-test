@@ -15,7 +15,7 @@ export function Stepper({ path, show = true }: Props) {
       <section className="hidden w-screen gap-4 h-[56px] bg-[#EDEFFC] md:flex items-center justify-center border">
         <div
           className={`rounded-full ${
-            path.includes(appPaths.PLANS)
+            path === `${appPaths.PLANS}/`
               ? "bg-[#4F4FFF] text-white"
               : "border border-gray-400 text-gray-400"
           } size-[24px] flex items-center justify-center  text-xs`}

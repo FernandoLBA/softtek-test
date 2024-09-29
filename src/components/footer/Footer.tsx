@@ -4,13 +4,15 @@ import { appPaths } from "../../constants";
 import { RimacWhiteIcon } from "../../icons";
 import { Divider } from "../divider/Divider";
 
-export function Footer() {
-  const pathname = window.location.pathname;
+interface Props {
+  pathname: string;
+}
 
+export function Footer({ pathname }: Props) {
   return (
     <footer
       className={`${
-        pathname === appPaths.HOME ? "flex" : "hidden"
+        pathname === appPaths.HOME || pathname === "" ? "flex" : "hidden"
       } justify-center md:justify-between flex-wrap items-center bg-black px-8 py-7 md:px-24`}
     >
       <Link className="text-[#F8F9FF] md:w-fit" to="/">

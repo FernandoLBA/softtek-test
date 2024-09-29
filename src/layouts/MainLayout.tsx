@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Footer, Navbar } from "../components";
 import { appPaths } from "../constants";
@@ -12,7 +12,11 @@ export default function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { pathname } = window.location;
+  const [pathname, setPathname] = useState<string>("");
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
 
   return (
     <section className="min-w-[370px] relative flex flex-col justify-between h-screen">
@@ -27,7 +31,7 @@ export default function MainLayout({
 
       <div className="px-8 md:px-24">{children}</div>
 
-      <Footer />
+      <Footer pathname={pathname} />
     </section>
   );
 }

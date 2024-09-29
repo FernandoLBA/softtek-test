@@ -1,4 +1,5 @@
-import { getDataFromLs } from "../../../../utils";
+import { getDataFromLs } from "../../../../../utils";
+
 
 export function TopText() {
   const { name } = getDataFromLs("user");

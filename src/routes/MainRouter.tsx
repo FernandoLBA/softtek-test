@@ -10,14 +10,14 @@ export default function MainRouter() {
 
   return (
     <Routes>
-      <Route path={`${appPaths.HOME}`} element={<HomeRoute />} />
+      <Route path={`${appPaths.HOME}/*`} element={<HomeRoute />} />
 
       {user ? (
         <Route path={`${appPaths.PLANS}/*`} element={<PlansRoute />} />
       ) : (
         <Route
           path={`${appPaths.PLANS}/*`}
-          element={<Navigate to={appPaths.HOME} />}
+          element={<Navigate to={`${appPaths.HOME}`} />}
         />
       )}
     </Routes>

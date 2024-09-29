@@ -9,7 +9,7 @@ import {
   TextInput,
 } from "../../../../components";
 import { IUser } from "../../../../interfaces";
-import { cn, setDataOnLs } from "../../../../utils";
+import { cn, setDataOnLs, whatsMyAge } from "../../../../utils";
 import { documentTypes } from "../../constants";
 import { heroFormSchema } from "../../schemas/heroFormSchema";
 import { getUser } from "../../services";
@@ -19,19 +19,20 @@ export function HeroForm({ className }: { className?: string }) {
     validationSchema: heroFormSchema,
     initialValues: {
       documentType: documentTypes[0].value,
-      document: "",
-      phone: "",
-      politics: false,
-      comms: false,
+      document: "123321123",
+      phone: "123321123",
+      politics: true,
+      comms: true,
     },
     onSubmit: async () => {
-      const data: IUser = await getUser();
+      const user: IUser = await getUser();
 
       setDataOnLs("user", {
-        ...data,
+        ...user,
         document: values.document,
         DocumentType: values.documentType,
         phone: values.phone,
+        age: whatsMyAge(new Date(user.birthDay)),
       });
     },
   });

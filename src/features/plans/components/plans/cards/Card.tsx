@@ -1,22 +1,10 @@
-import { FormikErrors } from "formik";
-import React from "react";
 import { GoCheckCircleFill } from "react-icons/go";
 import { MdOutlineRadioButtonUnchecked } from "react-icons/md";
 
-import { ICardsData } from "../../interfaces";
+import { options } from "../../../constants";
+import { ICardsData, IPlansContext } from "../../../interfaces";
 
-interface IValues {
-  forMe: boolean;
-  forSomebody: boolean;
-}
-interface Props {
-  setFieldValue: (
-    field: string,
-    value: unknown,
-    shouldValidate?: boolean
-  ) => Promise<void> | Promise<FormikErrors<IValues>>;
-  handleSubmit: (e?: React.FormEvent<HTMLFormElement>) => void;
-  values: { [key: string]: boolean };
+interface Props extends IPlansContext {
   data: ICardsData;
 }
 
@@ -24,12 +12,12 @@ export function Card({ data, setFieldValue, values, handleSubmit }: Props) {
   const { content, forWhom, img, name } = data;
 
   const handleRadioButtons = () => {
-    if (name === "forMe") {
+    if (name === options.FOR_ME) {
       setFieldValue(name, !values[name]);
-      setFieldValue("forSomebody", false);
+      setFieldValue(options.FOR_SOMEBODY, false);
     } else {
       setFieldValue(name, !values[name]);
-      setFieldValue("forMe", false);
+      setFieldValue(options.FOR_ME, false);
     }
 
     handleSubmit();
@@ -38,8 +26,8 @@ export function Card({ data, setFieldValue, values, handleSubmit }: Props) {
   return (
     <div
       className={`${
-        values[name] ? "border-4 border-black" : "border-none"
-      } relative px-5 py-10 bg-white flex h-[160px] md:h-[212px] shadow-xl shadow-[#AEACF359] gap-2 flex-col justify-between w-full lg:w-[256px] rounded-3xl`}
+        values[name] ? "border-4 border-black" : "border-4 border-transparent"
+      } relative px-5 py-10 bg-white flex h-[160px] md:h-[212px] shadow-xl shadow-[#AEACF359] gap-2 flex-col justify-between w-full lg:w-[288px] rounded-3xl`}
     >
       <div className="absolute top-5 size-6 right-5">
         {values[name] ? (

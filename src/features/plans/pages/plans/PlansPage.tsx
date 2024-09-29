@@ -1,4 +1,4 @@
-import { PlansView } from "../views/PlansView";
+import { PlansView } from "../../views";
 
 export default function PlansPage() {
   return (

@@ -1,2 +1,2 @@
-export { default as ForMePage } from './ForMePage';
-export { default as PlansPage } from './PlansPage';
+export { default as PlansPage } from './plans/PlansPage';
+export { default as ResumePage } from './plans/ResumePage';

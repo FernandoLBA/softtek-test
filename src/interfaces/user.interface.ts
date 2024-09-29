@@ -5,4 +5,5 @@ export interface IUser {
   phone: string;
   document: string;
   documentType: string;
+  age: number;
 }

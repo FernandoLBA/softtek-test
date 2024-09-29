@@ -3,9 +3,11 @@ import { Route, Routes } from "react-router";
 
 import { Loading } from "../../../components";
 import { appPaths } from "../../../constants";
-import { ForMePage } from "../pages";
 
-const PlansPage = React.lazy(() => import("../pages/PlansPage"));
+const PlansPage = React.lazy(() => import("../../plans/pages/plans/PlansPage"));
+const ResumePage = React.lazy(
+  () => import("../../plans/pages/resume/ResumePage")
+);
 
 export function PlansRoute() {
   return (
@@ -13,7 +15,7 @@ export function PlansRoute() {
       <Routes>
         <Route path="/" element={<PlansPage />} />
 
-        <Route path={appPaths.FOR_ME} element={<ForMePage />} />
+        <Route path={`/${appPaths.RESUME}`} element={<ResumePage />} />
       </Routes>
     </Suspense>
   );
