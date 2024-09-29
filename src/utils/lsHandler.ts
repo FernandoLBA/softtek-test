@@ -7,7 +7,8 @@ export function setDataOnLs(key: string, data: unknown) {
 export function getDataFromLs(key: string) {
   if (!key) return;
 
-  const data = JSON.parse(localStorage.getItem(key) ?? "");
+  const data: string = localStorage.getItem(key) ?? "";
+  const json = JSON.parse(data);
 
-  return data;
+  return json;
 }
