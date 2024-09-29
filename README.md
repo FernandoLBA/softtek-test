@@ -10,4 +10,8 @@
 - Formik
 - Yup
 
+# Deploy
+
+https://main--rimac-prueba.netlify.app/
+
 
