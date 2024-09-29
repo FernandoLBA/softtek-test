@@ -9,7 +9,6 @@ import { TopLayout } from "../../layouts/TopLayout";
 import { getPlans } from "../../services/getPlans";
 
 export function PlansView() {
-  // Todo: debo manejar la data con un context desde aquí
   const { values, setFieldValue, handleSubmit } = useFormik({
     initialValues: {
       forMe: false,

@@ -6,8 +6,12 @@ export interface IPlansContext {
   setFieldValue: (
     field: string,
     value: unknown,
-    shouldValidate?: boolean
-  ) => Promise<void> | Promise<FormikErrors<{ [key: string]: boolean }>>;
+    shouldValidate?: boolean | undefined
+  ) =>
+    | Promise<void>
+    | Promise<
+        FormikErrors<{ forMe: boolean; forSomebody: boolean; plans: never[] }>
+      >;
   handleSubmit: (e?: React.FormEvent<HTMLFormElement>) => void;
   values: IValues;
 }

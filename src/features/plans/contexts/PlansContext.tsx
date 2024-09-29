@@ -1,7 +1,6 @@
 import React, { createContext } from "react";
 
-import { IChooseValues, IPlansContext } from "../interfaces";
-import { FormikErrors } from "formik";
+import { IPlansContext } from "../interfaces";
 
 interface Props {
   children: React.ReactNode;
@@ -9,9 +8,13 @@ interface Props {
 }
 
 export const PlansContext = createContext<IPlansContext>({
-  handleSubmit: ()=>{},
-  setFieldValue: (field:string, value: unknown) => Promise<void> | Promise<FormikErrors<IChooseValues>>,
-  values: {}
+  handleSubmit: () => {},
+  setFieldValue: async()=>{},
+  values: {
+    forMe: false,
+    forSomebody: false,
+    plans: []
+  },
 });
 
 export const PlansContextProvider = ({ children, values }: Props) => {
