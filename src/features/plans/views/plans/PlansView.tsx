@@ -2,11 +2,11 @@ import { useFormik } from "formik";
 import { useEffect } from "react";
 
 import { IPlan, IUser } from "../../../../interfaces";
-import { getDataFromLs } from "../../../../utils";
-import { getPlans } from "../../services/getPlans";
-import { PlansContextProvider } from "../../contexts";
 import { StepperLayout } from "../../../../layouts";
+import { getDataFromLs } from "../../../../utils";
+import { PlansContextProvider } from "../../contexts";
 import { TopLayout } from "../../layouts/TopLayout";
+import { getPlans } from "../../services/getPlans";
 
 export function PlansView() {
   // Todo: debo manejar la data con un context desde aquí
@@ -33,7 +33,15 @@ export function PlansView() {
     } else if (values.forSomebody) {
       const plans: IPlan[] = await getPlans();
 
-      setFieldValue("plans", plans.slice(0, 3));
+      setFieldValue(
+        "plans",
+        plans
+          .slice(0, 3)
+          .map((plan) => ({
+            ...plan,
+            price: (plan.price - plan.price * 0.05).toFixed(2),
+          }))
+      );
     } else if (!values.forMe || !values.forSomebody) {
       setFieldValue("plans", []);
     }

@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router";
 
 import { appPaths } from "../constants";
-import { HomeRoute } from "../features/home/routes/HomeRoute";
-import { PlansRoute } from "../features/plans/routes/PlansRoutes";
+import { HomeRoute } from "../features/home";
+import PlansRoute from "../features/plans/routes/PlansRoutes";
 import { getDataFromLs } from "../utils";
 
 export default function MainRouter() {

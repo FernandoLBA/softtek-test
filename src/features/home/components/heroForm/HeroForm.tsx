@@ -30,7 +30,7 @@ export function HeroForm({ className }: { className?: string }) {
       setDataOnLs("user", {
         ...user,
         document: values.document,
-        DocumentType: values.documentType,
+        documentType: values.documentType,
         phone: values.phone,
         age: whatsMyAge(new Date(user.birthDay)),
       });

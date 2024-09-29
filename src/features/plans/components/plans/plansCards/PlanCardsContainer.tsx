@@ -7,7 +7,7 @@ interface Props {
 
 export function PlanCardsContainer({ plans }: Props) {
   return (
-    <div className="flex flex-wrap justify-center gap-2">
+    <div className="flex flex-wrap justify-center gap-8">
       {plans.map((data, i) => (
         <PlansCard key={i} data={data} index={i} />
       ))}

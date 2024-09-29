@@ -1,5 +1,7 @@
 export * from './button/AppButton';
 export * from './card/AppCard';
+export * from './cardText/CardText';
+export * from './cardTitle/CardTitle';
 export * from './checkBox/CheckBoxInput';
 export * from './divider/Divider';
 export * from './footer/Footer';

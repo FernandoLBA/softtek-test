@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router";
 
-import { AppButton, AppCard, Divider } from "../../../../../components";
+import {
+  AppButton,
+  AppCard,
+  CardText,
+  CardTitle,
+  Divider,
+} from "../../../../../components";
 import { appPaths } from "../../../../../constants";
 import { IPlan } from "../../../../../interfaces";
 import { setDataOnLs } from "../../../../../utils";
-import { forMe } from "../../../imgs";
+import { doctor, home, hospital, hospitalDark, laptop } from "../../../imgs";
 
 interface Props {
   data: IPlan;
@@ -13,6 +19,7 @@ interface Props {
 
 export function PlansCard({ data, index }: Props) {
   const nav = useNavigate();
+  const icons: string[] = [doctor, laptop, hospitalDark];
 
   const handleSelectedPlan = (data: IPlan) => {
     setDataOnLs("resume", { name: data.name, price: data.price });
@@ -21,7 +28,7 @@ export function PlansCard({ data, index }: Props) {
   };
 
   return (
-    <AppCard className="border-transparent w-[288px]">
+    <AppCard className="border-transparent w-[288px] h-[662px]">
       {index == 1 && (
         <span className="absolute top-8 text-xs bg-green-normal px-2 font-bold rounded-sm text-black-normal">
           Plan recomendado
@@ -29,10 +36,14 @@ export function PlansCard({ data, index }: Props) {
       )}
 
       <div className="flex justify-between mb-4">
-        <h4 className="font-bold text-xl w-4/6 text-black-normal">
-          {data.name}
-        </h4>
-        <img src={forMe} alt="plan" height="56px" width="56px" />
+        <CardTitle className="w-4/6">{data.name}</CardTitle>
+
+        <img
+          src={index === 0 || index === 2 ? home : hospital}
+          alt="plan"
+          height="56px"
+          width="56px"
+        />
       </div>
 
       <p className="uppercase text-[9px] text-gray-light2 font-thin">
@@ -42,22 +53,34 @@ export function PlansCard({ data, index }: Props) {
 
       <Divider className="border-purple-light md:block" />
 
-      <ul className="px-4 flex list-disc flex-col justify-start gap-10 h-full">
+      <ul className="px-0 md:px-4 flex list-none md:list-disc flex-col justify-start gap-10 h-full">
         {data.description.map((text, i) => (
-          <li className="text-black-normal" key={i}>
-            <span className="font-bold">
-              {text.split(" ").slice(0, 3).join(" ")}
-            </span>
-            <span className="font-thin">
-              {" "}
-              {text.split(" ").slice(3).join(" ")}
-            </span>
+          <li key={i}>
+            <CardText className="flex gap-2 justify-start">
+              <img
+                className="h-fit block md:hidden"
+                src={icons[i]}
+                alt="list"
+                height="20px"
+                width="20px"
+              />
+
+              <div className="text-black-normal text-md">
+                <span className="font-bold">
+                  {text.split(" ").slice(0, 3).join(" ")}
+                </span>
+                <span className="font-thin">
+                  {" "}
+                  {text.split(" ").slice(3).join(" ")}
+                </span>
+              </div>
+            </CardText>
           </li>
         ))}
       </ul>
 
       <AppButton
-        className="md:w-full text-sm h-[48px] bg-red-dark text-white-dark"
+        className="md:w-full h-[48px] text-xs bg-red-dark text-white-dark"
         text="Seleccionar Plan"
         onClick={() => handleSelectedPlan(data)}
       />

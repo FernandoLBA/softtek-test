@@ -25,7 +25,7 @@ export function Stepper({ path, show = true }: Props) {
 
         <p
           className={`${
-            path.includes(appPaths.PLANS) ? "" : "text-black-normal"
+            path !== appPaths.PLANS ? "text-gray-light2" : "text-black-normal"
           } text-sm`}
         >
           Planes y coberturas
@@ -79,7 +79,9 @@ function MobileStepper() {
         <IoChevronBackCircleOutline className="text-2xl text-gray-normal" />
       </AppButton>
 
-      <p className="w-[130px] uppercase text-black-normal text-xs">paso 1 de 2</p>
+      <p className="w-[130px] uppercase text-black-normal text-xs">
+        paso 1 de 2
+      </p>
 
       <div className="w-full h-2 bg-purple-light rounded-full">
         <div className="bg-purple-dark h-2 rounded-full w-[12px]"></div>

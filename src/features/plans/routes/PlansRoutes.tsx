@@ -9,7 +9,7 @@ const ResumePage = React.lazy(
   () => import("../../plans/pages/resume/ResumePage")
 );
 
-export function PlansRoute() {
+export default function PlansRoute() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>

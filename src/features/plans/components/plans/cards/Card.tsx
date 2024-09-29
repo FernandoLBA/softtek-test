@@ -3,7 +3,7 @@ import { MdOutlineRadioButtonUnchecked } from "react-icons/md";
 
 import { options } from "../../../constants";
 import { ICardsData, IPlansContext } from "../../../interfaces";
-import { AppCard } from "../../../../../components";
+import { AppCard, CardText, CardTitle } from "../../../../../components";
 
 interface Props extends IPlansContext {
   data: ICardsData;
@@ -30,9 +30,9 @@ export function Card({ data, setFieldValue, values, handleSubmit }: Props) {
         values[name]
           ? "border-4 border-black-dark"
           : "border-4 border-transparent"
-      } h-[160px] py-9 md:h-[212px] justify-between w-full lg:w-[288px]`}
+      } h-[160px] py-9 md:h-[212px] justify-between w-full lg:w-[320px]`}
     >
-      <div className="absolute top-5 size-6 right-5">
+      <div className="absolute top-4 size-[24px] right-7">
         {values[name] ? (
           <GoCheckCircleFill
             onClick={handleRadioButtons}
@@ -49,12 +49,10 @@ export function Card({ data, setFieldValue, values, handleSubmit }: Props) {
       <div className="flex md:flex-col items-center md:items-start justify-start gap-3">
         <img src={img} height="48px" width="48px" alt="icon" />
 
-        <h2 className="text-lg font-bold text-black-normal">{forWhom}</h2>
+        <CardTitle>{forWhom}</CardTitle>
       </div>
 
-      <p className="text-sm mt-2 sm:text-[10px] font-thin text-black-normal">
-        {content}
-      </p>
+      <CardText className="mt-2">{content}</CardText>
     </AppCard>
   );
 }
