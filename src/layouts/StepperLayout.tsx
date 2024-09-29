@@ -34,11 +34,11 @@ export function BackChevronIcon() {
   return (
     <div className="mt-10 w-fit">
       <AppButton
-        className="hidden md:block bg-transparent text-[#4F4FFF] text-md md:w-fit md:h-fit"
+        className="hidden md:block bg-transparent text-purple-dark text-md md:w-fit md:h-fit"
         onClick={lastPage}
         text="Volver"
       >
-        <IoChevronBackCircleOutline className="text-2xl text-[#4F4FFF]" />
+        <IoChevronBackCircleOutline className="text-2xl text-purple-dark" />
       </AppButton>
     </div>
   );

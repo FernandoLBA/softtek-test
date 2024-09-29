@@ -12,37 +12,37 @@ interface Props {
 export function Stepper({ path, show = true }: Props) {
   return (
     <div className={show ? "block" : "hidden"}>
-      <section className="hidden w-screen gap-4 h-[56px] bg-[#EDEFFC] md:flex items-center justify-center border">
+      <section className="hidden w-screen gap-4 h-[56px] bg-white-light md:flex items-center justify-center border">
         <div
           className={`rounded-full ${
-            path === `${appPaths.PLANS}/`
-              ? "bg-[#4F4FFF] text-white"
-              : "border border-gray-400 text-gray-400"
-          } size-[24px] flex items-center justify-center  text-xs`}
+            path === `${appPaths.PLANS}/` || path === appPaths.PLANS
+              ? "bg-purple-dark text-white-dark"
+              : "border border-gray-light2 text-gray-light2"
+          } size-[24px] flex items-center justify-center text-xs`}
         >
           1
         </div>
 
         <p
           className={`${
-            path.includes(appPaths.PLANS) ? "" : "text-gray-400"
+            path.includes(appPaths.PLANS) ? "" : "text-black-normal"
           } text-sm`}
         >
           Planes y coberturas
         </p>
 
         <div className="flex gap-1">
-          <div className="bg-[#4F4FFF] size-2 rounded-full w-[4px] h-[2px]" />
-          <div className="bg-[#4F4FFF] size-2 rounded-full w-[5px] h-[2px]" />
-          <div className="bg-[#4F4FFF] size-2 rounded-full w-[5px] h-[2px]" />
-          <div className="bg-[#4F4FFF] size-2 rounded-full w-[4px] h-[2px]" />
+          <div className="bg-purple-medium size-2 rounded-full w-[4px] h-[2px]" />
+          <div className="bg-purple-medium size-2 rounded-full w-[5px] h-[2px]" />
+          <div className="bg-purple-medium size-2 rounded-full w-[5px] h-[2px]" />
+          <div className="bg-purple-medium size-2 rounded-full w-[4px] h-[2px]" />
         </div>
 
         <div
           className={`rounded-full ${
             path.includes(appPaths.RESUME)
-              ? "bg-[#4F4FFF] text-white"
-              : "border border-gray-400 text-gray-400"
+              ? "bg-purple-dark text-white-dark"
+              : "border border-gray-light2 text-gray-light2"
           } size-[24px] flex items-center justify-center text-xs`}
         >
           2
@@ -50,7 +50,7 @@ export function Stepper({ path, show = true }: Props) {
 
         <p
           className={`${
-            path.includes(appPaths.RESUME) ? "" : "text-gray-400"
+            path.includes(appPaths.RESUME) ? "" : "text-gray-light2"
           } text-sm`}
         >
           Resumen
@@ -76,13 +76,13 @@ function MobileStepper() {
         onClick={lastPage}
         className="w-fit h-fit bg-transparent m-0"
       >
-        <IoChevronBackCircleOutline className="text-2xl text-gray-500" />
+        <IoChevronBackCircleOutline className="text-2xl text-gray-normal" />
       </AppButton>
 
-      <p className="w-[130px] uppercase text-xs">paso 1 de 2</p>
+      <p className="w-[130px] uppercase text-black-normal text-xs">paso 1 de 2</p>
 
-      <div className="w-full h-2 bg-gray-300 rounded-full">
-        <div className="bg-[#4F4FFF] h-2 rounded-full w-[12px]"></div>
+      <div className="w-full h-2 bg-purple-light rounded-full">
+        <div className="bg-purple-dark h-2 rounded-full w-[12px]"></div>
       </div>
     </section>
   );

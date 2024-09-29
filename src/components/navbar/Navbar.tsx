@@ -11,13 +11,13 @@ export function Navbar() {
       </Link>
 
       <div className="flex items-center gap-2">
-        <span className="hidden md:block mr-2 text-[12px]">¡Compra por este medio!</span>
+        <span className="hidden text-dark md:block mr-2 text-[12px]">¡Compra por este medio!</span>
 
         <i>
           <FaPhoneAlt />
         </i>
 
-        <p className="font-bold">(01) 411 6001</p>
+        <p className="font-bold text-dark">(01) 411 6001</p>
       </div>
     </nav>
   );

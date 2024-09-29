@@ -14,16 +14,16 @@ export function CheckBoxInput({ id, label, error, ...props }: Props) {
         id={id}
         name={id}
         type="checkbox"
-        className={`size-[20px] min-h-[20px] min-w-[20px] cursor-pointer text-gray-100 appearance-none border ${
-          error ? "border-red-500" : "border-black"
-        } rounded-md mr-2 checked:bg-no-repeat checked:bg-center checked:border-black checked:bg-black`}
+        className={`size-[20px] min-h-[20px] min-w-[20px] cursor-pointer checked:text-white-dark appearance-none border ${
+          error ? "border-red-dark" : "border-black-medium"
+        } rounded-md mr-2 checked:bg-no-repeat checked:bg-center checked:border-black-medium checked:bg-black-medium`}
         {...props}
       />
 
       <label
         htmlFor="checkbox-group-4"
         className={`text-xs ml-1 font-thin cursor-pointer ${
-          error ? "text-red-500" : "text-black"
+          error ? "text-red-dark" : "text-black-medium"
         }`}
       >
         {label}

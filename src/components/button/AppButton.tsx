@@ -13,7 +13,7 @@ export function AppButton({ children, text, className, ...props }: Props) {
     <button
       {...props}
       className={cn(
-        "bg-black font-bold text-white w-full md:w-[195px] h-[56px] md:h-[64px] rounded-full mt-6",
+        "bg-black-dark font-bold text-white-dark w-full md:w-[195px] h-[56px] md:h-[64px] rounded-full mt-6",
         className
       )}
       type="submit"

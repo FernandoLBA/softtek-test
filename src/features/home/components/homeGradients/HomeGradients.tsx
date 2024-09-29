@@ -6,6 +6,6 @@ export function MagentaGradient() {
 
 export function CyanGradient() {
   return (
-    <div className="absolute -top-12 md:top-40 right-0 md:h-[250px] shadow-[#00f4e2cc_0px_0px_150px_80px] md:shadow-[rgba(0, 244, 226,0.8)_0px_10px_100px_80px]" />
+    <div className={`absolute -top-12 md:top-40 right-0 md:h-[250px] shadow-[#00f4e2cc_0px_0px_150px_80px] md:shadow-[rgba(0, 244, 226,0.8)_0px_10px_100px_80px]`} />
   );
 }

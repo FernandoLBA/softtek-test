@@ -7,10 +7,10 @@ export function TopText() {
   return (
     <div className="w-fit md:w-4/5 text-left md:text-center">
       <h2 className="text-3xl font-bold md:text-5xl">
-        <span className="capitalize">{name}</span> ¿Para quién deseas cotizar?
+        <span className="capitalize text-black-normal">{name}</span> ¿Para quién deseas cotizar?
       </h2>
 
-      <p className="mt-2">
+      <p className="mt-2 text-black-normal">
         Selecciona la opción que se ajuste más a tus necesidades.
       </p>
     </div>

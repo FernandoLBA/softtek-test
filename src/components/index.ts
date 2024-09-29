@@ -1,4 +1,5 @@
 export * from './button/AppButton';
+export * from './card/AppCard';
 export * from './checkBox/CheckBoxInput';
 export * from './divider/Divider';
 export * from './footer/Footer';

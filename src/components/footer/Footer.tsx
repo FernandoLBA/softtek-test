@@ -13,15 +13,15 @@ export function Footer({ pathname }: Props) {
     <footer
       className={`${
         pathname === appPaths.HOME || pathname === "" ? "flex" : "hidden"
-      } justify-center md:justify-between flex-wrap items-center bg-black px-8 py-7 md:px-24`}
+      } justify-center md:justify-between flex-wrap items-center bg-black-dark px-8 py-7 md:px-24`}
     >
-      <Link className="text-[#F8F9FF] md:w-fit" to="/">
+      <Link className="text-white-medium md:w-fit" to="/">
         <RimacWhiteIcon />
       </Link>
 
       <Divider />
 
-      <p className="text-[#F8F9FF] text-[14px]">
+      <p className="text-white-dark text-[14px]">
         &copy; 2023 RIMAC Seguros y Reaseguros.
       </p>
     </footer>

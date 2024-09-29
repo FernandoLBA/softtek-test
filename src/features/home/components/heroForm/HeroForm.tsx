@@ -42,7 +42,7 @@ export function HeroForm({ className }: { className?: string }) {
       onSubmit={handleSubmit}
       className={cn("flex flex-col my-4", className)}
     >
-      <Divider className="border-gray-300 my-4" />
+      <Divider className="border-gray-light my-4" />
 
       <HeroSubtitle />
 
@@ -54,9 +54,9 @@ export function HeroForm({ className }: { className?: string }) {
           onChange={handleChange}
           onBlur={handleBlur}
           className={`w-[100px] mt-2 border border-r-none h-[62px] px-4 bg-transparent ${
-            errors.document ? "border-red-500" : "border-black"
+            errors.document ? "border-red-dark" : "border-gray-medium"
           } rounded-md rounded-r-none ${
-            errors.document ? "text-red-500" : "text-black"
+            errors.document ? "text-red-dark" : "text-black-dark"
           }`}
         >
           {documentTypes.map(({ value, label }) => (
@@ -77,7 +77,7 @@ export function HeroForm({ className }: { className?: string }) {
           showHelper={false}
         />
       </div>
-      <span className="text-red-500 text-xs">{errors.document}</span>
+      <span className="text-red-dark text-xs">{errors.document}</span>
 
       <TextInput
         id="phone"
@@ -110,7 +110,7 @@ export function HeroForm({ className }: { className?: string }) {
       <AppLink
         href="/"
         text="Aplican Términos y Condiciones."
-        className="text-xs underline"
+        className="text-xs text-black-dark underline"
       />
 
       <AppButton text="Cotiza aquí" />
