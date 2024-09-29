@@ -13,3 +13,7 @@
 # Deploy
 
 https://main--rimac-prueba.netlify.app/
+
+# Repositorio GitHub
+
+https://github.com/FernandoLBA/softtek-test
