@@ -1,28 +1,52 @@
-import React from "react";
+import { FormikErrors } from "formik";
+import { MdCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props {
   label: string;
   id: string;
-  className?: string;
   error?: string;
+  value: number;
+  setValue: (
+    field: string,
+    value: unknown,
+    shouldValidate?: boolean
+  ) =>
+    | Promise<void>
+    | Promise<
+        FormikErrors<{
+          documentType: string;
+          document: string;
+          phone: string;
+          politics: number;
+          comms: number;
+        }>
+      >;
 }
 
-export function CheckBoxInput({ id, label, error, ...props }: Props) {
+export function CheckBoxInput({ id, label, error, value, setValue }: Props) {
+  const handleCheckBoxes = () => {
+    setValue(id, value === 0 ? 1 : 0);
+  };
+
   return (
     <div className="flex items-center my-4">
-      <input
-        id={id}
-        name={id}
-        type="checkbox"
-        className={`size-[20px] min-h-[20px] min-w-[20px] cursor-pointer checked:text-white-dark appearance-none border ${
-          error ? "border-red-dark" : "border-black-medium"
-        } rounded-md mr-2 checked:bg-no-repeat checked:bg-center checked:border-black-medium checked:bg-black-medium`}
-        {...props}
-      />
+      {value === 0 ? (
+        <MdOutlineCheckBoxOutlineBlank
+          onClick={handleCheckBoxes}
+          className={`size-[20px] cursor-pointer ${
+            error ? "text-red-dark" : ""
+          }`}
+        />
+      ) : (
+        <MdCheckBox
+          onClick={handleCheckBoxes}
+          className="size-[20px]  cursor-pointer"
+        />
+      )}
 
       <label
         htmlFor="checkbox-group-4"
-        className={`text-xs ml-1 font-thin cursor-pointer ${
+        className={`text-xs ml-1 font-thin ${
           error ? "text-red-dark" : "text-black-medium"
         }`}
       >

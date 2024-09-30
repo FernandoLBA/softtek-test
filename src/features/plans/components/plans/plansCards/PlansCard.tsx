@@ -65,15 +65,15 @@ export function PlansCard({ data, index }: Props) {
                 width="20px"
               />
 
-              <div className="text-black-normal text-md">
-                <span className="font-bold">
+              <span className="text-black-normal text-md">
+                <b>
                   {text.split(" ").slice(0, 3).join(" ")}
-                </span>
+                </b>
                 <span className="font-thin">
                   {" "}
                   {text.split(" ").slice(3).join(" ")}
                 </span>
-              </div>
+              </span>
             </CardText>
           </li>
         ))}

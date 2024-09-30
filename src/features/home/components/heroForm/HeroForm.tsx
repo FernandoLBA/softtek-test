@@ -15,14 +15,21 @@ import { heroFormSchema } from "../../schemas/heroFormSchema";
 import { getUser } from "../../services";
 
 export function HeroForm({ className }: { className?: string }) {
-  const { values, errors, handleChange, handleBlur, handleSubmit } = useFormik({
+  const {
+    values,
+    errors,
+    handleChange,
+    setFieldValue,
+    handleBlur,
+    handleSubmit,
+  } = useFormik({
     validationSchema: heroFormSchema,
     initialValues: {
       documentType: documentTypes[0].value,
-      document: "123321123",
-      phone: "123321123",
-      politics: true,
-      comms: true,
+      document: "",
+      phone: "",
+      politics: 0,
+      comms: 0,
     },
     onSubmit: async () => {
       const user: IUser = await getUser();
@@ -88,11 +95,9 @@ export function HeroForm({ className }: { className?: string }) {
         onChange={handleChange}
       />
 
-      {/* //Todo: corregir el check para que aparezca blanco y el fondo negro */}
       <CheckBoxInput
-        checked={values.politics}
-        onChange={handleChange}
-        onBlur={handleBlur}
+        value={values.politics}
+        setValue={setFieldValue}
         id="politics"
         label="Acepto la Política de Privacidad"
         error={errors.politics}
@@ -100,9 +105,8 @@ export function HeroForm({ className }: { className?: string }) {
 
       <CheckBoxInput
         id="comms"
-        checked={values.comms}
-        onChange={handleChange}
-        onBlur={handleBlur}
+        value={values.comms}
+        setValue={setFieldValue}
         label="Acepto la Política de Comunicaciones Comerciales"
         error={errors.comms}
       />

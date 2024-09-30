@@ -13,7 +13,7 @@ export default function PlansRoute() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
-        <Route path="/" element={<PlansPage />} />
+        <Route path="/*" element={<PlansPage />} />
 
         <Route path={`/${appPaths.RESUME}`} element={<ResumePage />} />
       </Routes>
