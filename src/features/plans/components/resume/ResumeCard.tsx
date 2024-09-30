@@ -7,13 +7,19 @@ interface Props {
   resume: IPlan;
 }
 
-export function ResumeCard({user, resume}:Props) {
+export function ResumeCard({ user, resume }: Props) {
   return (
     <AppCard className="border-transparent py-7">
       <span className="uppercase text-xs mb-2">precios calculados para:</span>
 
       <div className="flex items-center gap-3 capitalize">
-        <img src={people} alt="client" width="24px" height="24px" />
+        <img
+          loading="lazy"
+          src={people}
+          alt="client"
+          width="24px"
+          height="24px"
+        />
         <p className="text-xl font-bold">{`${user?.name} ${user?.lastName}`}</p>
       </div>
 

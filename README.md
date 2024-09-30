@@ -1,19 +1,24 @@
-# Tecnologías usadas en el proyecto
+# Prueba técnica Softtek
+
+## Tecnologías usadas en el proyecto
 
 - React
 - TypeScript
 - Vite
 - Tailwind
 - Axios
-- React Router
+- React Router con Lazy Loading
 - Clsx
 - Formik
 - Yup
 
-# Deploy
+## Deploy
 
 https://main--rimac-prueba.netlify.app/
 
-# Repositorio GitHub
+## Repositorio GitHub
 
 https://github.com/FernandoLBA/softtek-test
+
+
+Autor: Fernando Barrios.

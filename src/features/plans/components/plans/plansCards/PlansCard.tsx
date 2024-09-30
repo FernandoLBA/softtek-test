@@ -39,6 +39,7 @@ export function PlansCard({ data, index }: Props) {
         <CardTitle className="w-4/6">{data.name}</CardTitle>
 
         <img
+          loading="lazy"
           src={index === 0 || index === 2 ? home : hospital}
           alt="plan"
           height="56px"
@@ -66,9 +67,7 @@ export function PlansCard({ data, index }: Props) {
               />
 
               <span className="text-black-normal text-md">
-                <b>
-                  {text.split(" ").slice(0, 3).join(" ")}
-                </b>
+                <b>{text.split(" ").slice(0, 3).join(" ")}</b>
                 <span className="font-thin">
                   {" "}
                   {text.split(" ").slice(3).join(" ")}

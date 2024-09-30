@@ -26,7 +26,7 @@ export function PlansView() {
 
     if (values.forMe) {
       const plans: IPlan[] = await getPlans();
-      const filteredPlans = plans.filter(({ age }) => age <= user.age);
+      const filteredPlans = plans.filter(({ age }) => age >= user.age);
 
       setFieldValue("plans", filteredPlans);
     } else if (values.forSomebody) {

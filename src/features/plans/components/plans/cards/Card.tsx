@@ -47,7 +47,7 @@ export function Card({ data, setFieldValue, values, handleSubmit }: Props) {
       </div>
 
       <div className="flex md:flex-col items-center md:items-start justify-start gap-3">
-        <img src={img} height="48px" width="48px" alt="icon" />
+        <img loading="lazy" src={img} height="48px" width="48px" alt="option" />
 
         <CardTitle>{forWhom}</CardTitle>
       </div>
