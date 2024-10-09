@@ -12,6 +12,7 @@ describe("<HeroForm />", () => {
     const button = screen.getByRole("button");
 
     expect(button).contain(/cotiza aquí/i);
+    expect(document).toContain(button);
   });
 
   test.fails("Debe retornar un error", ()=>{
