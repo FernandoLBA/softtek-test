@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 
+import React from "react";
 import { HeroSubtitle } from "../";
 import {
   AppButton,
@@ -14,7 +15,7 @@ import { documentTypes } from "../../constants";
 import { heroFormSchema } from "../../schemas/heroFormSchema";
 import { getUser } from "../../services";
 
-export function HeroForm({ className }: { className?: string }) {
+export const HeroForm: React.FC = ({ className }: { className?: string }) => {
   const {
     values,
     errors,
@@ -120,4 +121,4 @@ export function HeroForm({ className }: { className?: string }) {
       <AppButton text="Cotiza aquí" />
     </form>
   );
-}
+};

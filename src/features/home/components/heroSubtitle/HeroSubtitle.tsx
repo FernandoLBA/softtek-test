@@ -1,3 +1,5 @@
+import React from "react";
+
 export function HeroSubtitle() {
   return (
     <p className="w-full text-black-dark text-[14px] my-2">
